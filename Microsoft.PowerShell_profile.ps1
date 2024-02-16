@@ -10,12 +10,12 @@ oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\amro.omp.json" | Invoke-Exp
 # -----------------------------------------------------------------------------------------#
 
 # -----------------------------------------------------------------------------------------#
-# Importar m??dulo de iconos en la terminal
+# Importar módulo de iconos en la terminal
 Import-Module -Name Terminal-Icons
 # -----------------------------------------------------------------------------------------#
 
 # -----------------------------------------------------------------------------------------#
-# Eliminaci??n de algunos alias por defecto
+# Eliminación de algunos alias por defecto
 if(Get-Alias -Name cat -ErrorAction SilentlyContinue){
   Del alias:cat
 }
@@ -87,4 +87,8 @@ function Decode64 {
     }
 }
 
+# Función para iniciar el servicio de mariadb instalado mediante Xampp
+function MariadbStart {
+  mysqld --defaults-file=C:\xampp\mysql\bin\my.ini --standalone --console
+}
 # -----------------------------------------------------------------------------------------#
