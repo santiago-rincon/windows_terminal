@@ -36,6 +36,9 @@ if(Get-Alias -Name curl -ErrorAction SilentlyContinue){
 New-Alias -Name cat -Value bat
 # -----------------------------------------------------------------------------------------#
 
+# Docker variable format
+New-Item -Path Env:DOCKER_FORMAT -Value "ID:\t{{.ID}}\nName\t{{.Names}}\nPort\t{{.Ports}}\nStatus\t{{.Status}}\nCommand\t{{.Command}}\nCreated\t{{.CreatedAt}}\nSize\t{{.Size}}\nNet\t{{.Networks}}\n" | Out-Null
+
 # -----------------------------------------------------------------------------------------#
 # Import the Chocolatey Profile that contains the necessary code to enable tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion for `choco` will not function.
