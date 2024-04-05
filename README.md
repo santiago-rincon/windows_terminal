@@ -2,13 +2,13 @@
 
 Configuración de la terminal de Windows (perfil de PowerShell) con las [Hack Nerd Fonts](https://www.nerdfonts.com/), [oh my posh](https://ohmyposh.dev) y una apariencia similar a la powerlevel10k.
 
-## Resultado final 
+## Resultado final
 
 ![Resultado final](./assets/resultado_final.png)
 
-## Instalación 
+## Instalación
 
-1. Instalación de las _Hack Nerd Fonts_: descargamos el comprimido de las _Hack Nerd Fonts_ de la página oficial ([Hack Nerd Fonts](https://www.nerdfonts.com/font-downloads)), posteriormente descomprimimos el archivo _.zip_, seleccionamos todas las fuentes y damos clic derecho ***instalar para todos los usuarios***. 
+1. Instalación de las _Hack Nerd Fonts_: descargamos el comprimido de las _Hack Nerd Fonts_ de la página oficial ([Hack Nerd Fonts](https://www.nerdfonts.com/font-downloads)), posteriormente descomprimimos el archivo _.zip_, seleccionamos todas las fuentes y damos clic derecho **_instalar para todos los usuarios_**.
 
 ![Resultado final](./assets/hack_nerd_fonts.png)
 
@@ -30,7 +30,7 @@ Si el anterior comando da un error relacionado con la inexistencia de la variabl
 New-Item -Path $PROFILE -Type File -Force
 ```
 
-Una vez abra el archivo ubicado en la ruta _C:\\Users\\\<usuario\>\\OneDrive\\Documents\\WindowsPowerShell\\Microsoft.PowerShell_profile.ps1_  se debe agregar la siguiente línea:
+Una vez abra el archivo ubicado en la ruta _C:\\Users\\\<usuario\>\\OneDrive\\Documents\\WindowsPowerShell\\Microsoft.PowerShell_profile.ps1_ se debe agregar la siguiente línea:
 
 ```powershell
 oh-my-posh init pwsh | Invoke-Expression
@@ -49,6 +49,7 @@ En este punto debería cargase la configuración de oh my posh por defecto
 ```powershell
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\<nombre_del_tema>.omp.json" | Invoke-Expression
 ```
+
 _Nota: tema actualmente en uso **amro**, en el repositorio está el archivo reconfigurado_
 
 4. Instalación de iconos: para tener iconos en la consola se usará el reapositorio [Terminal-Icons](https://github.com/devblackops/Terminal-Icons), a continuación su instalación. Este proceso de sebe **ejecutar como administrador**.
@@ -61,9 +62,9 @@ Una vez termine la instalción se debe agregar la siguiente línea en el archivo
 
 ```powershell
 Import-Module -Name Terminal-Icons
-````
+```
 
-5. Instalación de bat: con el paquete _bat_ se conseguirá una mejor estética a la hora de visualizar archivos. Bat se instala a través de ***scoop***, de no contar con este gestor de paquetes ejecute los siguientes comando.
+5. Instalación de bat: con el paquete _bat_ se conseguirá una mejor estética a la hora de visualizar archivos. Bat se instala a través de **_scoop_**, de no contar con este gestor de paquetes ejecute los siguientes comando.
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
@@ -82,11 +83,12 @@ Para usar _bat_ como el tipico _cat_ de sistemas Unix se asignará un alias a es
 Del alias:cat
 New-Alias -Name cat -Value bat
 ```
+
 ## Instalación de PSReadLine (Autosugerencia con base al historial)
 
 ![PSReadLine](./assets/psreadline.png)
 
-6. Instalación de PSReadLine: con la utilidad [_PSRealLine_](https://learn.microsoft.com/en-us/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3) se agrega un auto sugerido a la terminal en función del historial de comandos ejecutados. Para la instalación se debe ejecutar los siguientes comandos como ***Administrador***.
+6. Instalación de PSReadLine: con la utilidad [_PSRealLine_](https://learn.microsoft.com/en-us/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3) se agrega un auto sugerido a la terminal en función del historial de comandos ejecutados. Para la instalación se debe ejecutar los siguientes comandos como **_Administrador_**.
 
 ```powershell
 Install-Module -Name PSReadLine -AllowClobber -Force
@@ -96,29 +98,26 @@ Set-PSReadLineOption -PredictionSource History
 ## Archivos de configuración
 
 En este repositorio se encuentra los siguientes archivos de configuración, en cada archivo se encuentra comentada la ruta donde debe ser copiado:
+
 - settings.json (Configuración de la terminal)
 - WindowsPowerShell\Microsoft.PowerShell_profile.ps1 (Archivo de perfil tema e con iconos configurado)
 - amro.omp.json (Archivo del tema actualmente en uso Path: C:\\Users\\\<usuario\>\\AppData\\Local\\Programs\\oh-my-posh\\themes\\amro.omp.json)
 
 ## Instalación de algúnos programas Unix para Windows
-Los siguinetes programas se descargan de la página de [GNUWin32](https://gnuwin32.sourceforge.net/packages.html) y [exiftools](https://exiftool.org/), se recomienda descargar el binario. Se debe añadir al ***PATH*** la siguiente ruta: C:\\Program Files (x86)\\GnuWin32\\bin
-Para el caso de ***exiftools*** se debe descomprimir el binario en dicha ruta y renombrarlo como "exiftool" en caso de ser necesario.
+
+Los siguinetes programas se descargan de la página de [GNUWin32](https://gnuwin32.sourceforge.net/packages.html), [w64devkit](https://github.com/skeeto/w64devkit), [locate32](https://locate32.cogit.net/) y [exiftools](https://exiftool.org/), se recomienda descargar el binario. Se debe añadir al **_PATH_** la siguiente ruta: C:\\Program Files (x86)\\GnuWin32\\bin
+Para el caso de **_exiftools_** se debe descomprimir el binario en dicha ruta y renombrarlo como "exiftool" en caso de ser necesario.
 
 ![Descargas de GNUWin32](./assets/gnuwin32.png)
 
-- [awk](https://gnuwin32.sourceforge.net/packages/gawk.htm)
-- [diff](https://gnuwin32.sourceforge.net/packages/diffutils.htm)
 - [exiftools](https://exiftool.org/)
 - [file](https://gnuwin32.sourceforge.net/packages/file.htm)
-- [grep](https://gnuwin32.sourceforge.net/packages/grep.htm)
+- [locate](https://locate32.cogit.net/)
 - [mdcat](https://github.com/swsnr/mdcat/releases)
-- [sed](https://gnuwin32.sourceforge.net/packages/sed.htm)
+- [Suite completa de w64devkit](https://github.com/skeeto/w64devkit/releases)
 - [tree](https://gnuwin32.sourceforge.net/packages/tree.htm)
-- wget (vía choco `choco install wget`)
-- [which](https://gnuwin32.sourceforge.net/packages/which.htm)
 
-
-## Lista de shortcuts 
+## Lista de shortcuts
 
 <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
 	<tr style="border: 1px solid #dddddd; text-align: left; padding: 8px;">

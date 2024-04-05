@@ -3,10 +3,14 @@
 
 # -----------------------------------------------------------------------------------------#
 # Cargar tema de Oh My Posh
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\amro.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\space.omp.json" | Invoke-Expression
 # Posibles temas 
 # amro
 # space
+
+# Cargar startship
+Invoke-Expression (&starship init powershell)
+
 # -----------------------------------------------------------------------------------------#
 
 # -----------------------------------------------------------------------------------------#
@@ -58,36 +62,6 @@ function Compile-Ionic{
   ionic cap copy;
   ionic cap sync;
   ionic cap open $system;
-}
-
-# Función para codificar en base64
-function Encode64 {
-    param (
-        [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [Alias("String")]
-        [String]$InputString
-    )
-
-    process {
-        $bytes = [System.Text.Encoding]::UTF8.GetBytes($InputString)
-        $base64 = [System.Convert]::ToBase64String($bytes)
-        Write-Output $base64
-    }
-}
-
-# Función para decodificar en base64
-function Decode64 {
-    param (
-        [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [Alias("Base64String")]
-        [String]$InputBase64
-    )
-
-    process {
-        $bytes = [System.Convert]::FromBase64String($InputBase64)
-        $string = [System.Text.Encoding]::UTF8.GetString($bytes)
-        Write-Output $string
-    }
 }
 
 # Función para iniciar el servicio de mariadb instalado mediante Xampp
