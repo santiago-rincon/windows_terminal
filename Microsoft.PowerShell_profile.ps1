@@ -3,19 +3,24 @@
 
 # -----------------------------------------------------------------------------------------#
 # Cargar tema de Oh My Posh
-# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\space.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\di4am0nd.omp.json" | Invoke-Expression
 # Posibles temas 
 # amro
 # space
 
 # Cargar startship
-Invoke-Expression (&starship init powershell)
+# Invoke-Expression (&starship init powershell)
 
 # -----------------------------------------------------------------------------------------#
 
 # -----------------------------------------------------------------------------------------#
 # Importar módulo de iconos en la terminal
 Import-Module -Name Terminal-Icons
+# -----------------------------------------------------------------------------------------#
+
+# -----------------------------------------------------------------------------------------#
+# Cambio de directorio por defecto
+cd D:\Usuario
 # -----------------------------------------------------------------------------------------#
 
 # -----------------------------------------------------------------------------------------#

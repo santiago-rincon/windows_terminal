@@ -1,0 +1,131 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#26C6DA",
+          "properties": {
+            "windows": " "
+          },
+          "style": "plain",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "#1f77c7",
+          "style": "plain",
+          "type": "shell",
+          "template": "({{ .Name }}) "
+        },
+        {
+          "foreground": "#FFBD00",
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "#00C6F7",
+          "properties": {
+            "style": "agnoster",
+            "folder_separator_icon": "/",
+            "mapped_locations": {
+              "D:/Usuario/Documents/Dev/": "\udb83\udd6e ",
+              "D:/Usuario/Documents/": "\udb86\uddf6 ",
+              "D:/Usuario/Desktop/": "\uf108 ",
+              "D:/Usuario/Music/": "\udb84\udf59 ",
+              "D:/Usuario/Pictures/": "\udb80\ude4f ",
+              "D:/Usuario/Videos/": "\uf03d ",
+              "D:/Usuario/Downloads/": "\udb80\ude4d ",
+              "D:/Usuario/": "\udb84\udcb5 "
+            }
+          },
+          "style": "plain",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#f30852",
+          "properties": {
+            "extensions": ["angular.json"]
+          },
+          "style": "plain",
+          "template": "\udb81\udebf ",
+          "type": "angular"
+        },
+        {
+          "foreground": "#de4c36",
+          "properties": {
+            "fetch_status": true
+          },
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#98C379",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "plain",
+          "template": "<#ffffff>via</> \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "foreground": "#008fe2",
+          "style": "plain",
+          "properties": {
+            "fetch_virtual_env": true
+          },
+          "template": "<#ffffff>via</> \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{  .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
+          "type": "npm",
+          "style": "plain",
+          "properties": {
+            "extensions": ["pnpm-lock.yaml"],
+            "fetch_version": false
+          },
+          "foreground": "#b76507",
+          "template": "with pnpm \uf4f9 "
+        },
+        {
+          "foreground": "#ffffff",
+          "leading_diamond": "\udb81\udd1f ",
+          "properties": {
+            "style": "austin",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": "{{ .FormattedMs }}",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#FFBD00",
+          "style": "plain",
+          "template": "\u2b9e ",
+          "type": "text"
+        },
+        {
+          "foreground": "#D4AD01",
+          "style": "plain",
+          "template": "\ue780 ",
+          "type": "root"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
+
